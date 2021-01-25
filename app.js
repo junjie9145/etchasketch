@@ -18,8 +18,9 @@ randomColor = () => {
 + ")"}
 console.log(randomColor())
 
+
 rainbowButton.addEventListener("click", function(){
-  color = randomColor();
+  color = "rainbow";
 })
 
 createGrid = () => {
@@ -62,12 +63,15 @@ resetGrid = () => {
 }
 const square = document.querySelector(".container");
 square.addEventListener("mouseover", function(e){
-    e.target.style.backgroundColor = color
-})
+    const divs = document.querySelectorAll('div');
+    for (let i = 0; i < divs.length; i++){
+        if(color === "black") {
+            e.target.style.backgroundColor = "black"
+        } else if (color === "rainbow")
+    {e.target.style.backgroundColor = randomColor();}
+    }
+}
+)
 
 newGrid.addEventListener("click", updateGrid);
 reset.addEventListener("click", resetGrid);
-
-setColor = () => {
-
-}
